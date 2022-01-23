@@ -19,12 +19,13 @@ int main(){
     for(int i{2}; i < N; i++){
         dp[i] = dp[i-1] + dp[i-2];
     }
-    timespec_get(&t2, TIME_UTC);
-
+    
     //printing the values
     for(int i{}; i < N; i++){
         cout << dp[i] << " ";
     }
+    cout << '\n';
+    timespec_get(&t2, TIME_UTC);
     ll nt = 0, t = 0;
     t = (t2.tv_sec - t1.tv_sec);
     nt = (t2.tv_nsec - t1.tv_nsec);
@@ -36,6 +37,5 @@ int main(){
         t += nt/1e9;
         nt = 1e9 + nt%(ll)1e9; 
     }
-    cout << '\n';
     cout << t << "sec " << nt << "nsec\n";
 }

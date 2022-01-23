@@ -1,20 +1,20 @@
 from random import randint
-from timeit import timeit
+from time import time
 
-n = 512
+n = 64
 
 # Populating the lists
 a = [[randint(0, 1000) for i in range(n)] for j in range(n)]
 b = [[randint(0, 1000) for i in range(n)] for j in range(n)]
 c = [[0 for i in range(n)] for j in range(n)]
 
-t1 = timeit()
+t1 = time()
 # Perfroming the addition operations
 for i in range(n):
     for j in range(n):
         for x in range(n):
             c[i][j] += a[i][x] * b[x][j]
-t2 = timeit()
+t2 = time()
 
 # Printing the values
 for i in range(n):

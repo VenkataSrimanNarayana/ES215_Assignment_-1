@@ -22,12 +22,15 @@ int main(){
     for(int i{}; i < N; i++){
         arr[i] = fibonacci(i);
     }
-    timespec_get(&t2, TIME_UTC);
+    
 
     // Printing the values
     for(int i{}; i < N; i++){
         cout << arr[i] << " ";
     }
+    cout << '\n';
+    
+    timespec_get(&t2, TIME_UTC);
     ll nt = 0, t = 0;
     t = (t2.tv_sec - t1.tv_sec);
     nt = (t2.tv_nsec - t1.tv_nsec);
@@ -39,6 +42,5 @@ int main(){
         t += nt/1e9;
         nt = 1e9 + nt%(ll)1e9; 
     }
-    cout << '\n';
     cout << t << "sec " << nt << "nsec\n";
 }
